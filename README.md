@@ -39,7 +39,7 @@ Design and develop a scalable SQL Server data warehouse by integrating data from
 
 The data flow illustrates how data moves from the **CRM and ERP source systems** through the **Bronze, Silver, and Gold layers** of the data warehouse.
 
-![Data Flow](documents/data_model.png)
+![Data Flow](documents/data_flow.png)
 
 ### 🥉 Bronze Layer
 Raw data is extracted from the source systems and loaded into the Bronze layer without transformation.
