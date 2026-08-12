@@ -34,11 +34,44 @@ Design and develop a scalable SQL Server data warehouse by integrating data from
 - Document the data model and warehouse architecture.
 
 ---
+
+## 🔄 Data Flow
+
+The data flow illustrates how data moves from the **CRM and ERP source systems** through the **Bronze, Silver, and Gold layers** of the data warehouse.
+
+![Data Flow](documents/data_model.png)
+
+### 🥉 Bronze Layer
+Raw data is extracted from the source systems and loaded into the Bronze layer without transformation.
+
+- **CRM Sources:** Customer information, product information, and sales details.
+- **ERP Sources:** Customer data, location data, and product category data.
+- The original source structure is preserved for traceability and auditing.
+
+### 🥈 Silver Layer
+Data from the Bronze layer is cleansed, standardized, and transformed before being used for analytics.
+
+- Data quality issues are identified and resolved.
+- Values are standardized and normalized.
+- Data from CRM and ERP systems is prepared for integration.
+- Business rules and transformations are applied.
+
+### 🥇 Gold Layer
+The cleaned Silver layer data is integrated into business-ready datasets designed for reporting and analytics.
+
+- **`fact_sales`** – Contains sales transaction and performance data.
+- **`dim_customers`** – Combines customer information from CRM and ERP sources.
+- **`dim_products`** – Combines product information from CRM and ERP sources.
+
+The Gold layer forms the final **Star Schema**, providing a structured data model optimized for analytical queries and business intelligence reporting.
+
+---
+
 ## ⭐ Data Model
 
 The **Gold Layer** is designed using a **Star Schema** to provide a simple and efficient structure for analytical queries and reporting.
 
-![Data Model](documents/data_flow.drawio.png)
+![Data Model](documents/data_model.png)
 
 The model consists of one central fact table connected to two dimension tables:
 
