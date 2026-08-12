@@ -34,6 +34,36 @@ Design and develop a scalable SQL Server data warehouse by integrating data from
 - Document the data model and warehouse architecture.
 
 ---
+## ⭐ Data Model
+
+The **Gold Layer** is designed using a **Star Schema** to provide a simple and efficient structure for analytical queries and reporting.
+
+![Data Model](documents/data_flow.drawio.png)
+
+The model consists of one central fact table connected to two dimension tables:
+
+1. **Fact Sales (`gold.fact_sales`)**: Stores transactional sales data including order numbers, order dates, shipping dates, quantities, prices, and sales amounts. It connects to the customer and product dimensions through foreign keys.
+
+2. **Customer Dimension (`gold.dim_customers`)**: Contains descriptive customer information such as customer ID, name, country, marital status, gender, and birthdate. Each customer is uniquely identified using a surrogate `customer_key`.
+
+3. **Product Dimension (`gold.dim_products`)**: Contains product-related information including product name, category, subcategory, product line, cost, and maintenance information. Each product is uniquely identified using a surrogate `product_key`.
+
+### 🔗 Relationships
+
+- `gold.fact_sales.customer_key` → `gold.dim_customers.customer_key`
+- `gold.fact_sales.product_key` → `gold.dim_products.product_key`
+
+The dimension tables have a **one-to-many relationship** with the fact table, allowing each customer and product to be associated with multiple sales transactions.
+
+### 🧮 Sales Calculation
+
+Sales values are calculated using:
+
+**Sales Amount = Quantity × Price**
+
+This star schema provides a business-ready data model optimized for **SQL analytics, reporting, and BI applications**.
+
+---
 
 ## 📈 Analytics & Reporting (Business Intelligence)
 
