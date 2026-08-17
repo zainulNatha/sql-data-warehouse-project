@@ -124,8 +124,4 @@ These reports enable stakeholders to monitor business performance, identify tren
 - Star Schema
 - Business Intelligence
 
----
 
-## 📄 Project Goal
-
-This project demonstrates best practices in **Data Engineering**, **Data Warehousing**, and **SQL Analytics**, providing a complete end-to-end solution suitable for portfolio and learning purposes.
