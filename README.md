@@ -124,4 +124,72 @@ These reports enable stakeholders to monitor business performance, identify tren
 - Star Schema
 - Business Intelligence
 
+## 📁 Repository Structure
+
+The repository is organised to separate source datasets, data warehouse development, testing, documentation, and analytical reporting.
+
+```text
+sql-data-warehouse-project/
+│
+├── data_reports/                       # Business-focused analytical reports
+│   ├── README.md                       # Overview of reporting layer
+│   │
+│   ├── customer_report/
+│   │   ├── README.md                   # Customer report documentation
+│   │   └── report_customer.sql         # Customer analysis SQL view
+│   │
+│   └── product_report/
+│       ├── README.md                   # Product report documentation
+│       └── report_products.sql         # Product analysis SQL view
+│
+├── datasets/                           # Source data from CRM and ERP systems
+│   │
+│   ├── CRM/
+│   │   ├── cust_info.csv
+│   │   ├── prd_info.csv
+│   │   └── sales_details.csv
+│   │
+│   └── ERP/
+│       ├── CUST_AZ12.csv
+│       ├── LOC_A101.csv
+│       └── PX_CAT_G1V2.csv
+│
+├── documents/                          # Project architecture and documentation
+│   ├── data_architecture.png
+│   ├── data_catalog.md
+│   ├── data_flow.png
+│   ├── data_model.png
+│   └── naming_conventions.md
+│
+├── scripts/                            # Data warehouse SQL development
+│   │
+│   ├── Bronze/
+│   │   ├── ddl_bronze.sql             # Bronze layer table definitions
+│   │   └── proc_load_bronze.sql       # Raw data loading procedure
+│   │
+│   ├── Silver/
+│   │   ├── ddl_silver.sql             # Silver layer table definitions
+│   │   └── proc_load_silver            # Cleansing and transformation procedure
+│   │
+│   ├── Gold/
+│   │   └── ddl_gold.sql               # Star schema / analytical model
+│   │
+│   └── init_database.sql              # Database and schema initialisation
+│
+├── tests/                              # Data quality validation
+│   ├── quality_checks_gold.sql
+│   └── quality_checks_silver.sql
+│
+├── LICENSE
+└── README.md                           # Main project documentation
+```
+
+### 🔎 Key Areas
+
+* **`scripts/`** – Contains the complete Bronze, Silver, and Gold data warehouse implementation.
+* **`datasets/`** – Contains the CRM and ERP source datasets used by the ETL pipeline.
+* **`documents/`** – Contains the architecture, data flow, data model, catalogue, and naming standards.
+* **`tests/`** – Contains SQL data-quality checks for the transformed warehouse layers.
+* **`data_reports/`** – Contains business-ready Customer and Product analytical reports created from the Gold Layer.
+
 
