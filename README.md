@@ -141,7 +141,7 @@ The product performance scatter plot is used to identify the relationship betwee
 
 ### Dashboard Preview
 
-![Sales Performance Dashboard](documents/sales_performance_dashboard.png)
+![Sales Performance Dashboard](documents/sales_performance_dashboard.png.png)
 
 > Tableau Desktop is connected directly to the SQL Server Gold Layer using a live connection, allowing the dashboard to query the reporting views directly.
 
