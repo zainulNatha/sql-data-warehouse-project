@@ -114,6 +114,37 @@ These reports enable stakeholders to monitor business performance, identify tren
 
 ---
 
+## 📊 Data Visualisation
+
+To complete the end-to-end workflow, the Gold Layer reporting views were connected directly to **Tableau Desktop using a live SQL Server connection**.
+
+A simple Sales Performance dashboard was created to present key customer and product insights from:
+
+- `gold.report_customers`
+- `gold.report_products`
+
+### Dashboard Highlights
+
+The dashboard includes:
+
+- **Total Sales**
+- **Total Customers**
+- **Total Orders**
+- **Total Products**
+- **Average Order Value**
+- Sales by Customer Segment
+- Average Order Value by Customer Segment
+- Sales by Product Category
+- Product Performance analysis using Sales, Selling Price, Quantity and Product Segment
+
+The product performance scatter plot is used to identify the relationship between **product revenue, selling price and sales volume**, while also highlighting High-, Mid- and Low-Performing products.
+
+### Dashboard Preview
+
+![Sales Performance Dashboard](documents/sales_performance_dashboard.png)
+
+> Tableau Desktop is connected directly to the SQL Server Gold Layer using a live connection, allowing the dashboard to query the reporting views directly.
+
 ## 🛠️ Technologies Used
 
 - SQL Server
@@ -123,6 +154,7 @@ These reports enable stakeholders to monitor business performance, identify tren
 - ETL
 - Star Schema
 - Business Intelligence
+- Tableau Desktop
 
 ## 📁 Repository Structure
 
